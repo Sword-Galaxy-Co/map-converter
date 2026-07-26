@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://cukchsmjuc8d7"]
+
+[ext_resource type="Script" uid="uid://dar58g7bxd6fc" path="res://script/auto_Load/text_to_character.gd" id="1_8qt1b"]
+[ext_resource type="FontFile" uid="uid://b5h4ek0lbup3n" path="res://Win Fonts used/lucon.ttf" id="3_f8l22"]
+
+[node name="TextToCharacter" type="Control" unique_id=2033951914]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qt1b")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2141390652]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1224559388]
+layout_mode = 2
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="MarginContainer/VBoxContainer" unique_id=1780118777]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EditorPanel" type="PanelContainer" parent="MarginContainer/VBoxContainer/HSplitContainer2" unique_id=289328367]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HSplitContainer2/EditorPanel" unique_id=1641773728]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HSplitContainer2/EditorPanel/VBoxContainer" unique_id=130081072]
+layout_mode = 2
+text = "Text Layout"
+
+[node name="Input" type="TextEdit" parent="MarginContainer/VBoxContainer/HSplitContainer2/EditorPanel/VBoxContainer" unique_id=1574235714]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 8
+theme_override_fonts/font = ExtResource("3_f8l22")
+placeholder_text = "abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMMNOPQRS
+TUVWXYZ"
+highlight_current_line = true
+
+[node name="EditorPanel2" type="PanelContainer" parent="MarginContainer/VBoxContainer/HSplitContainer2" unique_id=1670682361]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HSplitContainer2/EditorPanel2" unique_id=1856382020]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HSplitContainer2/EditorPanel2/VBoxContainer" unique_id=1440375544]
+layout_mode = 2
+text = "Map "
+
+[node name="Output" type="CodeEdit" parent="MarginContainer/VBoxContainer/HSplitContainer2/EditorPanel2/VBoxContainer" unique_id=1589963541]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("3_f8l22")
+placeholder_text = "─│┌┐└┘├┤┬┴┼═║╒╓╔╕╖╗╘╙╚╛╜╝╞
+╟╠╡╢╣╤╥╦╧╨╩╪╫╫╬░▒▓█  
+xxxxxxx"
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+middle_mouse_paste_enabled = false
+empty_selection_clipboard_enabled = false
+virtual_keyboard_enabled = false
+minimap_draw = true
+use_default_word_separators = false
+highlight_current_line = true
+
+[node name="HBoxContainer" type="HSplitContainer" parent="MarginContainer/VBoxContainer" unique_id=1353067302]
+layout_mode = 2
+split_offsets = PackedInt32Array(52, 404)
+split_offset = 52
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1804769756]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "convert"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1966865847]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "hint
+"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1178692050]
+layout_mode = 2
+text = "Save Output"
+
+[node name="Timer" type="Timer" parent="." unique_id=1925121463]
+
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/HSplitContainer2/EditorPanel/VBoxContainer/Input" to="." method="_on_input_text_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
