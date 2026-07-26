@@ -1,0 +1,1 @@
+okay this is uses the "Lucon.tff" windows font, due to its clean look and me not having anything that helps better, unless i make my own which i do not know where to start there, the fonts are in the "Win Fonts used" foulder
