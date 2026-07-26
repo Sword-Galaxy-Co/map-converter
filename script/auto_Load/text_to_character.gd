@@ -123,9 +123,9 @@ func _on_input_text_changed() -> void:
 
 func _on_button_2_pressed() -> void:
 	print("WIP")
-	print(str(outputTE.text))
-	pass
-	#for line in outputTE.text
-	#FileAccess.open("user://help.txt",FileAccess.READ_WRITE).store_line(str(outputTE.text))
+	var hell = str(outputTE.text)
+	print(hell)
+	
+	FileAccess.open("user://help.txt",FileAccess.WRITE).store_string(hell)
 	
 pass # Replace with function body.
